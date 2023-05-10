@@ -11,5 +11,15 @@
     "mysql2": "^3.3.0",
     "nodemon": "^2.0.22",
     "sequelize": "^6.31.1"
-  }
+  },
+  "name": "pageturner",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
