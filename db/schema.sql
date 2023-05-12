@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS pages_db;
+CREATE DATABASE pages_db;

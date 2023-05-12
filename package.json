@@ -10,7 +10,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.3.0",
     "nodemon": "^2.0.22",
-    "sequelize": "^6.31.1"
+    "handlebars": "^4.7.7"
   },
   "name": "pageturner",
   "description": "",
