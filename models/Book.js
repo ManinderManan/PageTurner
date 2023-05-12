@@ -54,4 +54,4 @@ Book.init(
     }
 );
 
-model.exports = Book;
+module.exports = Book;

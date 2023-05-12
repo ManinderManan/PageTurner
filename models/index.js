@@ -1,8 +1,18 @@
+module.exports = { Book, User, Genre, BookGenre };
 const User = require("./User");
 const Post = require("./Post");
 const Book = require("./Book");
 const Genre = require("./Genre");
 const BookGenre = require("./BookGenre");
+
+// .hasMany(, {
+//   foreignKey: 'gallery_id',
+// });
+
+// .belongsTo(, {
+//   foreignKey: 'gallery_id',
+// });
+
 
 Post.belongsTo(User, {
     foreignKey: "user_id",
