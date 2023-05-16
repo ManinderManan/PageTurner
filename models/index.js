@@ -1,4 +1,4 @@
-module.exports = { Book, User, Genre, BookGenre };
+
 const User = require("./User");
 const Post = require("./Post");
 const Book = require("./Book");
@@ -34,3 +34,4 @@ Genre.belongsTo(Book, {
 }) 
 
 // this section is incomplete while we wait to decide on user flow
+module.exports = { Book, User, Genre, BookGenre };

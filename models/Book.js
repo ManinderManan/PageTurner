@@ -29,19 +29,19 @@ Book.init(
         bookGenre_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: BookGenre,
-                key: "id" 
-              }
+            // references: {
+            //     model: BookGenre,
+            //     key: "id" 
+            //   }
         },
         post_id: {
             type: DataTypes.INTEGER,
             // if we make Book and Post creation seperate we will need to allow null and create an update route?
             allowNull: false,
-            references: {
-                model: Post,
-                key: "id",
-            }
+            // references: {
+            //     model: Post,
+            //     key: "id",
+            // }
         }
         // would need to add User id if we made discussed changes
     },
