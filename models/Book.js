@@ -1,7 +1,6 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-const Post = require("./Post")
-const BookGenre = require("./BookGenre")
+const getBookInfo = require('../utils/googleApi')
 
 class Book extends Model {}
 
@@ -21,36 +20,40 @@ Book.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // possibly move rating to Post model
-        rating: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        bookGenre_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: BookGenre,
-                key: "id" 
-              }
-        },
+        // bookGenre_id: {
+        //    type: DataTypes.INTEGER,
+        //    allowNull: false,
+        //},
+        book_image: {
+            type: DataTypes.STRING, // must store url as string
+            allowNull: true
+          },
         post_id: {
             type: DataTypes.INTEGER,
-            // if we make Book and Post creation seperate we will need to allow null and create an update route?
-            allowNull: false,
-            references: {
-                model: Post,
-                key: "id",
-            }
+            allowNull: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false, 
+            // add required and validate
         }
-        // would need to add User id if we made discussed changes
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        underscored: true,
         modelName: 'Book',
+        hooks: {
+            // after a new Book is successfully added
+            beforeCreate: async (book) => {
+                // Extracts image URL from the JSON object
+                const response = await getBookInfo(book.title)
+                book.book_image = response.image_url; // assigns URL to table
+                // we can potentially add an if statement to fill in the author field from the API if the user leaves it blank
+                book.author = response.author;
+                await book.save();
+            }
+          }
     }
 );
 

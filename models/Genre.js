@@ -1,3 +1,5 @@
+// Putting this on hold
+
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
 

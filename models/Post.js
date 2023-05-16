@@ -1,7 +1,5 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-const User = require("./User")
-const Book = require("./Book")
 
 class Post extends Model {}
 
@@ -17,6 +15,11 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        // moved rating from Book to Post model
+        rating: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+      },
         body_review: {
            type: DataTypes.TEXT,
            allowNull: false,
@@ -24,18 +27,10 @@ Post.init(
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-              model: User,
-              key: "id" 
-            }
         },
         book_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-              model: Book,
-              key: "id" 
-            }
         },
         created_at: {
             type: DataTypes.DATE,
