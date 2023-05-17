@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, BookGenre, Genre } = require("../../models");
+const { Book, BookGenre, Genre } = require("../../../models");
 
 // find all genres
 router.get("/", async (req, res) => {
@@ -76,3 +76,5 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json(error);
     }
     });
+
+module.exports = router;
