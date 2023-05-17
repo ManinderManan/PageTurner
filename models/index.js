@@ -2,10 +2,6 @@ const User = require("./User");
 const Post = require("./Post");
 const Book = require("./Book");
 
-// const Genre = require("./Genre");
-// const BookGenre = require("./BookGenre");
-
-
 // Users can have multiple books
 User.hasMany(Book, {
     foreignKey: "user_id",

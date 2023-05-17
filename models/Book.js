@@ -20,10 +20,6 @@ Book.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // bookGenre_id: {
-        //    type: DataTypes.INTEGER,
-        //    allowNull: false,
-        //},
         book_image: {
             type: DataTypes.STRING, // must store url as string
             allowNull: true
