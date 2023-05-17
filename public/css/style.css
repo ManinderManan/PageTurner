@@ -93,12 +93,12 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #3C5447;
+  background: rgb(60, 84, 71);
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
   top: 40px;
-  box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+  box-shadow: 0px 2px 15px rgb(60, 84, 71);
 }
 
 #header.header-scrolled {
@@ -112,7 +112,6 @@ h6 {
   font-weight: 700;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
-  margin-left: -180px;
 }
 
 #header .logo a {
@@ -147,7 +146,7 @@ h6 {
 */
 .navbar {
   padding: 0;
-  margin-right: 120px;
+  justify-content: flex-start;
 }
 
 .navbar ul {
@@ -155,20 +154,22 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar li {
   position: relative;
   white-space: nowrap;
   padding: 8px 0 8px 20px;
- 
-
+  margin-right: 20px;
+  
 }
 
 .navbar>ul>li {
   position: relative;
   white-space: nowrap;
   padding: 8px 0 8px 20px;
+
 }
 
 .login-btn {  
@@ -180,7 +181,8 @@ h6 {
   font-size: 14px;
   display: inline-block;
   align-items: center;
-  justify-content: center;
+  justify-content: flex;
+  margin-right: 20px;
 
 }
 
@@ -316,7 +318,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(28, 47, 65, 0.9);
+  background: rgb(60, 84, 71);
   transition: 0.3s;
   z-index: 999;
 }
@@ -348,14 +350,14 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #2c4964;
+  color: rgb(60, 84, 71);
   border: none;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #1977cc;
+  color: #3C5447;
 }
 
 .navbar-mobile .getstarted,
@@ -547,14 +549,14 @@ section {
 --------------------------------------------------------------*/
 .posts .icon-boxes h4 {
   font-size: 18px;
-  color: #4b7dab;
+  color: #3C5447;
   margin-bottom: 15px;
 }
 
 .posts .icon-boxes h3 {
   font-size: 28px;
   font-weight: 700;
-  color: #2c4964;
+  color: #3C5447;
   margin-bottom: 15px;
 }
 
@@ -569,19 +571,19 @@ section {
   justify-content: center;
   width: 64px;
   height: 64px;
-  border: 2px solid #8dc2f1;
+  border: 2px solid #3C5447;
   border-radius: 50px;
   transition: 0.5s;
 }
 
 .about .icon-box .icon i {
-  color: #1977cc;
+  color: #3C5447;
   font-size: 32px;
 }
 
 .about .icon-box:hover .icon {
-  background: #1977cc;
-  border-color: #1977cc;
+  background: #3C5447;
+  border-color: #3C5447;
 }
 
 .about .icon-box:hover .icon i {
@@ -596,12 +598,12 @@ section {
 }
 
 .about .icon-box .title a {
-  color: #343a40;
+  color: #3C5447;
   transition: 0.3s;
 }
 
 .about .icon-box .title a:hover {
-  color: #1977cc;
+  color: #3C5447;
 }
 
 .about .icon-box .description {
