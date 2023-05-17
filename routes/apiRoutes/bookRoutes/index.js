@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, BookGenre, Genre, Post } = require('../../models');
+const { Book, BookGenre, Genre, Post } = require('../../../models');
 
 // get all books
 router.get('/', async (req, res) => {
@@ -129,3 +129,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(error);
     }
     });
+
+
+module.exports = router;
