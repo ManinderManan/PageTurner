@@ -112,6 +112,7 @@ h6 {
   font-weight: 700;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
+  margin-left: -180px;
 }
 
 #header .logo a {
@@ -122,22 +123,6 @@ h6 {
   max-height: 40px;
 }
 
-
-
-.login-btn {  
-  background: white;
-  color: #000;
-  padding: 8px 20px;
-  white-space: nowrap;
-  transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
-}
-
-.login-btn:hover {
-  background: #5F5749;
-  color: #fff;
-}
 
 @media (max-width: 768px) {
   .login-btn {
@@ -152,8 +137,7 @@ h6 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 75px;
-  margin-right: 120px;
+  align-content: center;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -163,8 +147,7 @@ h6 {
 */
 .navbar {
   padding: 0;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 120px;
 }
 
 .navbar ul {
@@ -176,6 +159,9 @@ h6 {
 
 .navbar li {
   position: relative;
+  white-space: nowrap;
+  padding: 8px 0 8px 20px;
+ 
 
 }
 
@@ -183,6 +169,24 @@ h6 {
   position: relative;
   white-space: nowrap;
   padding: 8px 0 8px 20px;
+}
+
+.login-btn {  
+  background: white;
+  color: #000;
+  padding: 8px 20px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.login-btn:hover {
+  background: #5F5749;
+  color: #fff;
 }
 
 .navbar a,
@@ -196,8 +200,6 @@ h6 {
   transition: 0.3s;
   border-bottom: 2px solid #fff;
   padding: 5px 2px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .navbar a i,
