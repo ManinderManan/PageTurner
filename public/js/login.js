@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     } else {
       alert('Failed to log in');
     }
-  }
+  } 
 };
 
 document
