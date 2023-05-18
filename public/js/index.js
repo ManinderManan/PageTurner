@@ -1,4 +1,6 @@
 
+
+
 (function() {
   "use strict";
 
@@ -10,6 +12,8 @@
       return document.querySelector(el)
     }
   }
+
+
 
 
   const on = (type, el, listener, all = false) => {
@@ -160,6 +164,5 @@
       preloader.remove()
     });
   }
-  
 
 })()

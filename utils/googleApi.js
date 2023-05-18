@@ -1,6 +1,7 @@
 // this takes in a title from user input, makes an api call to google
 // then returns an object with author and imag_Url
-export default async function getBookInfo(title){
+// const googleApi = 
+ async function getBookInfo(title){
     const apiKey = process.env.API_KEY
     const googleUrl = `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${apiKey}`
     try {
@@ -22,3 +23,4 @@ export default async function getBookInfo(title){
       }  
 }
 
+module.exports = {getBookInfo};
