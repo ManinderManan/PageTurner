@@ -1,18 +1,19 @@
-<div>
-    <h3>Post</h3>
-
-<div>
-
-    <p>some text</p>
-
-    <ul>
-        {{#each user.post as |post|}}
-        <li>
-            <h4> {{post.book_title}}</h4>
-            <p> {{post.book_author}}</p>
-            <p> {{post.rating}}</p>
-        </li>
-{{/each}}
-    </ul>
-</div>
+<div class="dashBox">
+    <div class="textBox">
+        <p>Welcome,</p>
+        <h1> {{book.user.username}} </h1>
+    </div>
+    <div class="bookBox">
+        {{#each book as |book|}}
+        <div class="bookLinks">
+            <a href="{{book.post_id}}">
+                <img src="{{book.book_image}}" alt="{{book.book_title}}"/>
+            </a>
+            <br>
+            <a href="book/{{book.id}}">
+            <h2>{{book.book_title}}</h2>
+            </a>
+        </div>    
+        {{/each}}
+    </div>
 </div>
