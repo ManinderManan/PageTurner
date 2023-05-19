@@ -1,6 +1,7 @@
-const { User, Book } = require("../models");
+const { User, Book, Post } = require("../models");
 const userData = require("./user-seeds.json");
 const bookData = require("./book-seeds.json");
+const postData = require("./post-seeds.json");
 
 const seedUsers = async () => {
     try {
@@ -20,5 +21,15 @@ const seedUsers = async () => {
     }
   };
 
+  const seedPosts = async () => {
+    try {
+      await Post.bulkCreate(postData);
+      console.log('POSTS SEEDED');
+    } catch (error) {
+      console.error('Error seeding posts:', error);
+    }
+  };
+
   seedUsers();
   seedBooks();
+  seedPosts();
