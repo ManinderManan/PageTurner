@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Book, BookGenre, Genre, Post } = require('../../../models');
+const {getBookInfo} = require("../../../utils/googleApi")
 
 // get all books
 router.get('/', async (req, res) => {
@@ -33,23 +34,13 @@ router.get('/:id', async (req, res) => {
 
 // create a new book
 router.post('/', async (req, res) => {
-    try {
-        const bookData = await Book.create(req.body);
-        // if there's book genre data, we need to create pairings to bulk create in the BookGenre model
-        if (req.body.genre_id.length) {
-        const bookGenreIdArr = req.body.genre_id.map((genre_id) => {
-            return {
-            book_id: bookData.id,
-            genre_id,
-            };
-        });
-        await BookGenre.bulkCreate(bookGenreIdArr);
-        }
-        // if no book genre data, just respond
-        res.status(200).json(bookData);
-    } catch (error) {
-        res.status(500).json(error);
-    }
+    const newBook = req.body
+    const response = await getBookInfo(req.body.book_title)
+    console.log("response here", response)
+    newBook.book_author = response.author
+    newBook.book_image = response.image_url
+    const book = await Book.create({book_title: newBook.book_title, book_author: newBook.book_author, book_image: newBook.book_image, user_id: newBook.user_id})
+    res.json(book)
     }
 );
 
