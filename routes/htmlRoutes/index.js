@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Book, BookGenre, Genre, Post, User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // GET all books for homepage and display them in the homepage.handlebars
 router.get("/", async (req, res) => {
@@ -7,8 +8,11 @@ router.get("/", async (req, res) => {
     const bookData = await Book.findAll({
       include: [
         {
-          model: Genre,
-          attributes: ["genre_name"],
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Post,
         },
       ],
     });
@@ -25,28 +29,16 @@ router.get("/", async (req, res) => {
 });
 
 // GET one post and display it in the single-post.handlebars
-router.get("/post/:id", async (req, res) => {
+router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["username"],
         },
         {
           model: Book,
-          attributes: ["book_title", "book_author", "rating"],
-          include: [
-            {
-              model: BookGenre,
-              include: [
-                {
-                  model: Genre,
-                  attributes: ["name"],
-                },
-              ],
-            },
-          ],
         },
       ],
     });
@@ -55,7 +47,7 @@ router.get("/post/:id", async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render("post", {
-      ...post,
+      post,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -63,48 +55,33 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
-// GET all posts and display them in the dashboard.handlebars
-router.get("/dashboard", async (req, res) => {
+// GET all books and display them in the dashboard.handlebars
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
-      where: {
-        // use the ID from the session
-        user_id: req.session.id,
-      },
+    const userData = await User.findByPk(req.session.user.id, {
       include: [
         {
-          model: User,
-          attributes: ["name"],
+          model: Book,
         },
         {
-          model: Book,
-          attributes: ["book_title", "book_author", "rating"],
-          include: [
-            {
-              model: BookGenre,
-              include: [
-                {
-                  model: Genre,
-                  attributes: ["name"],
-                },
-              ],
-            },
-          ],
+          model: Post,
         },
       ],
     });
 
+
     // serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
     res.render("dashboard", {
-      ...posts,
+      ...user,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 // render the login.handlebars page if the user is not logged in and redirect to the homepage if they are logged in already
 router.get("/login", (req, res) => {

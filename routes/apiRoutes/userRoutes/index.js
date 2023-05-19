@@ -9,14 +9,18 @@ router.post("/signup", async (req, res) => {
         password: req.body.password,
     });
 
+    // save the session so that the user is logged in
     req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.user = userData;
+        req.session.id = userData.id;
+
     res.status(200).json(userData);
     });
 
 
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json(error);
   }
 });
 
@@ -28,16 +32,19 @@ router.post("/login", async (req, res) => {
             username: req.body.username,
         },
     });
+    // if no user found with that username
     if (!userData) {
       res.status(400).json({ message: "No user found with that username!" });
       return;
     }
+    // if user found, check password
     const validPassword = await userData.checkPass(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
+    // save the session so that the user is logged in
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user = userData;
@@ -45,17 +52,18 @@ router.post("/login", async (req, res) => {
 
       res.json({ user: userData, message: "You are now logged in!" });
     });
+
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
-// logout user
+// logout user by destroying session and redirecting to homepage
 router.post("/logout", async (req, res) => {
   try {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
-        res.status(204).end();
+        res.redirect("/");
       });
     } else {
       res.status(404).end();
@@ -69,7 +77,7 @@ router.post("/logout", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-        include: [{ Post }],
+        include: [{ Post, Book }],
     });
     res.status(200).json(userData);
   } catch (error) {
@@ -81,7 +89,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-        include: [{ Post }],
+        include: [{ Post, Book }],
     });
     if (!userData) {
       res.status(404).json({ message: "No user found with that id!" });

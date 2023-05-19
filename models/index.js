@@ -1,7 +1,7 @@
 const User = require("./User");
 const Post = require("./Post");
 const Book = require("./Book");
-const Dashboard = require("./Dashboard")
+const Dashboard = require("./Dashboard");
 
 // Users can have multiple books
 User.hasMany(Book, {
