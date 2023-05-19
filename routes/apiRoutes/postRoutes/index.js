@@ -45,24 +45,24 @@ router.post("/", async (req, res) => {
   }
 });
 
-// update a post
-router.put("/:id", async (req, res) => {
-  try {
-    const postData = await Post.update(req.body, {
-      where: {
-        id: req.params.id,
-        user_id: req.session.id,
-      },
-    });
-    if (!postData) {
-      res.status(400).json({ message: "No post found with that id!" });
-      return;
-    }
-    res.status(200).json(postData);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
+// // update a post
+// router.put("/:id", async (req, res) => {
+//   try {
+//     const postData = await Post.update(req.body, {
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.id,
+//       },
+//     });
+//     if (!postData) {
+//       res.status(400).json({ message: "No post found with that id!" });
+//       return;
+//     }
+//     res.status(200).json(postData);
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// });
 
 // delete a post
 router.delete("/:id", async (req, res) => {
@@ -70,7 +70,6 @@ router.delete("/:id", async (req, res) => {
     const postData = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.id,
       },
     });
     if (!postData) {
