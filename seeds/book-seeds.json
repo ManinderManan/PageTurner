@@ -1,0 +1,24 @@
+[
+    {
+      "book_title": "The Hitchhiker's Guide to the Galaxy",
+      "book_author": "Douglas Adams",
+      "book_image": "http://books.google.com/books/content?id=CgeNEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "post_id": null,
+      "user_id": 1
+    },
+    {
+      "book_title": "Life, the Universe and Everything",
+      "book_author": "Douglas Adams",
+      "book_image": "http://books.google.com/books/content?id=qh_9ygEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "post_id": null,
+      "user_id": 3
+    },
+    {
+      "book_title": "So Long, and Thanks for All the Fish",
+      "book_author": "Douglas Adams",
+      "book_image": "http://books.google.com/books/content?id=eHjzE9_Ov10C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "post_id": null,
+      "user_id": 2
+    }
+  ]
+  
