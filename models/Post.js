@@ -15,7 +15,6 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // moved rating from Book to Post model
         rating: {
           type: DataTypes.INTEGER,
           allowNull: false,
