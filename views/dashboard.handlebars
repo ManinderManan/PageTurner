@@ -1,18 +1,15 @@
 <div>
     <h3>Post</h3>
-
+    </div>
 <div>
-
-    <p>some text</p>
-
-    <ul>
+    <ul id = "userDash">
         {{#each user.post as |post|}}
         <li>
             <h4> {{post.book_title}}</h4>
             <p> {{post.book_author}}</p>
-            <p> {{post.rating}}</p>
+            {{!-- <p> {{post.rating}}</p> --}}
         </li>
 {{/each}}
     </ul>
-</div>
+
 </div>

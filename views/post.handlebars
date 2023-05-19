@@ -1,62 +1,12 @@
-<!-- ======= Posts Section ======= -->
-    <section id="posts" class="posts">
-      <div class="container">
+<form id="blogEditForm">
+    <label for="blogTitle">Title</label>
+    <input id="blogTitle" value="{{post.title}}" type="text">
+    <div>
+    <label for="blogBody">Body</label>
+<textarea id="blogBody"  cols="30" rows="10">{{post.text}}</textarea>    
+</div>
+<input  type="submit" value="Submit">
 
-        <div class="section-title">
-          <h2>Posts</h2>
-          <p>View posts from our users about their favorite books below!</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4><a href="">The Sorcerer's Stone</a></h4>
-              <p>Harry finds out he is a wizard with some insane powers</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4><a href="">Chamber of Secrets</a></h4>
-              <p>The best movie and book easily. Don't @ me. Everybody know's I'm right.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4><a href="">The Prisoner of Azkaban</a></h4>
-              <p>Sirius Black is the best. People need to trust Harry more.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4><a href="">Goblet of Fire</a></h4>
-              <p>This is hands down the most Meh book in the entire series.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4>The Order of the Phoenix</h4>
-              <p>Also very Meh. Do better J.K. Rowling. Also I hate Ron's pet rat.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-book"></i></div>
-              <h4><a href="">The Half Blood Prince</a></h4>
-              <p>Hands down the best book. Go Snape! He is on par with Dumbledore and Hagrid for best character in the series.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+</form>
+<button id="deletePost">Delete</button>
+<script src="/js/edit.js"></script>
