@@ -1,18 +1,22 @@
-<div>
-    <h3>Post</h3>
-
-<div>
-
-    <p>some text</p>
-
-    <ul>
-        {{#each user.post as |post|}}
-        <li>
-            <h4> {{post.book_title}}</h4>
-            <p> {{post.book_author}}</p>
-            <p> {{post.rating}}</p>
-        </li>
-{{/each}}
-    </ul>
-</div>
+<div class="dashContainer">
+    <div class="textContainer">
+        <!-- This will be for the logged in user's personal dashboard -->
+        <p>Welcome,</p>
+        <h1> {{book.user.username}} </h1>
+    </div>
+    <div class="bookContainer">
+        {{#each book as |book|}}
+        <div class="bookLinks">
+            <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
+            <a href="{{book.post_id}}">
+                <img src="{{book.book_image}}" alt="{{book.book_title}}"/>
+            </a>
+            <br>
+            <!-- Button will go in front of text - lets users add this book to their queue -->
+            <a href="book/{{book.id}}">
+            {{book.book_title}}
+            </a>
+        </div>    
+        {{/each}}
+    </div>
 </div>
