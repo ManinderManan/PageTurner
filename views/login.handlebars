@@ -1,50 +1,58 @@
-<form action="" class="box is-shadowless">  <h1 class="title">Please sign in</h1>          <div class="card">
-  <div class="card-content">
-            <div class="field">
-              <label for="" class="label">Username</label>
-              <div class="control has-icons-left">
-                <input type="username" class="input" required>
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
-                </span>
-              </div>
-            </div>
-            <div class="field">
-              <label for="" class="label">Password</label>
-              <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required>
-                <span class="icon is-small is-left">
-                  <i class="fa fa-lock"></i>
-                </span>
-              </div>
-            </div>
-            <div class="field">
-              <label for="" class="checkbox">
-                <input type="checkbox">
-               Remember me
-              </label>
-            </div>
-
-            <div class="field buttons">
-              <button class="button is-fullwidth is-success">
-                <span class="icon"><i class="log-in"></i></span><span>Login</span>
-              </button></div></div>
-            <div class="card">
-  <div class="card-content">
-            <div class="field buttons">
-              <button class="button is-Login is-fullwidth"> <span class="icon">
-      <i class="Login"></i>
-    </span>
-                <span>Sign Up</span></button>
-              {{!-- <button class="button is-Sign Up is-fullwidth"> <span class="icon"> --}}
-      <i class="Sign Up"></i>
-    </span> 
-    </div></div>
-          </form>
+<form action="" class="box is-shadowless">
+  <h1 class="title">Please sign in</h1>
+  <div class="card">
+    <div class="card-content">
+      <div class="field">
+        <label for="" class="label">Username</label>
+        <div class="control has-icons-left">
+          <input id="username-login" type="username" class="input" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-envelope"></i>
+          </span>
         </div>
+      </div>
+      <div class="field">
+        <label for="" class="label">Password</label>
+        <div class="control has-icons-left">
+          <input id="password-login" type="password" placeholder="*******" class="input" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-lock"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="" class="checkbox">
+          <input type="checkbox">
+          Remember me
+        </label>
+      </div>
+
+      <div class="field buttons">
+        <button id="loginBtn" class="button is-fullwidth is-success">
+          <span class="icon">
+            <i class="log-in"></i>
+          </span>
+          <span>Login</span>
+        </button>
       </div>
     </div>
   </div>
-</section>
 
-<script src="/public/js/login.js"></script>
+  <div class="card">
+    <div class="card-content">
+      <div class="field buttons">
+        <button class="button is-Login is-fullwidth">
+          <span class="icon">
+            <i class="Login"></i>
+          </span>
+          <span>Sign Up</span>
+        </button>
+        <!-- <button class="button is-Sign Up is-fullwidth"> <span class="icon"> -->
+        <i class="Sign Up"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script src="/js/login.js"></script>
