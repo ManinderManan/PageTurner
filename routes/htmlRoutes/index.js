@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, BookGenre, Genre, Post, User } = require("../../models");
+const { Book, Post, User, Dashboard } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET all books for homepage and display them in the homepage.handlebars
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       books,
-      loggedIn: req.session.loggedIn,
+     // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
