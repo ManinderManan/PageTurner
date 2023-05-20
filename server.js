@@ -25,8 +25,8 @@ const sessionConfig = {
 const app = express();
 
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
-app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+// app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+// app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 const PORT = process.env.PORT || 3001;
 
@@ -40,7 +40,7 @@ app.set('view engine', 'handlebars');
 
 
 // Express middleware
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 

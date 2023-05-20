@@ -28,6 +28,7 @@ router.get("/", async (req, res) => {
 // GET one post and display it in the single-post.handlebars
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
+    console.log("hit post route")
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
