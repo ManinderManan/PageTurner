@@ -8,11 +8,8 @@ router.get("/", async (req, res) => {
     const bookData = await Book.findAll({
       include: [
         {
-          model: User,
-          attributes: ["username"],
-        },
-        {
           model: Post,
+          attributes: ["id"],
         },
       ],
     });

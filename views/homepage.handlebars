@@ -1,5 +1,23 @@
 <!-- This should be all users book covers linked to posts, right?-->
-<h2>Journal Entry</h2>
+<h2>Check out recent books:</h2>
+
+<div class ="homeContainer">
+    <div class="bookContainer">
+        {{#each books as |books|}}
+        <div class="bookLinks">
+            <!-- Book image redirect to view original user's review -->
+            <a href="{{books.post_id}}">
+                <img src="{{books.book_image}}" alt="{{books.book_title}}"/>
+            </a>
+            <br>
+            <!-- Button will go in front of text - lets users add this book to their queue -->
+            <a href="book/{{books.id}}">
+            {{books.book_title}}
+            </a>
+        </div>    
+        {{/each}}
+    </div>
+</div>
 
 {{!-- <div>
 
