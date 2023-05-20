@@ -98,6 +98,7 @@ h6 {
   z-index: 997;
   top: 40px;
   position: relative;
+  margin-top: -50px;
   
 }
 
@@ -393,7 +394,7 @@ h6 {
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
-  display: block;
+  display:block;
 }
 
 /* --------------------------------------------------------------
@@ -446,7 +447,7 @@ h6 {
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 35px;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 175px;
   transition: 0.5s;
   color: #fff;
