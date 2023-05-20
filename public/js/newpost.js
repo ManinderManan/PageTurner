@@ -13,6 +13,6 @@ blogSubmit.addEventListener('submit', async (event)=>{
     body: JSON.stringify({title, text}),
   });
   console.log(response);
-
-
+    
+    
 });

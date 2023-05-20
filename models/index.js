@@ -22,6 +22,11 @@ Book.belongsToMany(User, {
     otherKey: "user_id",
 });
 
+Dashboard.belongsTo(User, {
+    through: "Dashboard",
+    foreignKey: "user_id",
+})
+
 // Many posts can be made about a book
 Book.hasMany(Post, {
     foreignKey: "book_id",

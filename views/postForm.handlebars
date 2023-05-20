@@ -1,0 +1,12 @@
+<form id="blogEditForm">
+    <label for="blogTitle">Title</label>
+    <input id="blogTitle" value="{{post.title}}" type="text">
+    <div>
+    <label for="blogBody">Body</label>
+<textarea id="blogBody"  cols="30" rows="10">{{post.text}}</textarea>    
+</div>
+<input  type="submit" value="Submit">
+
+</form>
+<button id="deletePost">Delete</button>
+<script src="/js/edit.js"></script>
