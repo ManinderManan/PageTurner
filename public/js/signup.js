@@ -18,7 +18,7 @@ console.log("hit function")
 
     if (response.ok) {
       console.log({response})
-      // document.location.replace('/');
+      document.location.replace('/');
     } else {
       alert('Failed to log in');
     }
