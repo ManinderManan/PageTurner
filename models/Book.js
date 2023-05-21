@@ -1,6 +1,5 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-const {getBookInfo} = require('../utils/googleApi')
 
 class Book extends Model {}
 

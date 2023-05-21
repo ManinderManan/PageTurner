@@ -7,13 +7,12 @@
   <title>Page Turner</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-{{!-- ./images/favicon-16x16.png --}}
   <link href="../../public/images/favicon-16x16.png" rel="icon">
   <link href="../../public/images/favicon-16x16.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-{{!-- ../vendor/swiper/swiper-bundle.min.js--}}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CRaleway:300,300i,400,400i,500,500i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../../vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,48 +21,44 @@
   <link href="../../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../../vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../../vendor/swiper/swiper-bundle.min.js" rel="stylesheet">
-{{!-- ./css/style.css --}}
+
   <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body>
   <header id="header">
-    <div class="container d-flex align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><h1>Page Turner</h1></a>
 
-      <h1 class="logo me-auto"><a href="index.html">Page Turner</a></h1>
-    
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#posts">Posts</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-      <a href="/login" class="login-btn scrollto"><span class="d-none d-md-inline">Sign In</span></a>
-
-    </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              {{#if loggedIn}}
+              <button class="btn btn-danger" id="logoutBtn">Logout</button>
+              {{else}}
+              <a class = "nav-link" href = "/login">Login</a>
+              {{/if}}
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
- {{#unless loggedIn}}
+  {{#unless loggedIn}}
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Page Turner</h1>
@@ -71,24 +66,26 @@
       <a href="/signup" class="btn-get-started">Get Started</a>
     </div>
     <div id="landingContainer">
-      <div class="pictureContainer" width="400px">
-        <img src="./images/logo.png">
-        
+      <div class="pictureContainer" width="280px">
+        <img src="./images/ptLogo.png">
       </div>
+    </div>
   </section>
+  {{/unless}}
+  
 
-{{/unless}}
-    {{{body}}}
-    
-    
-    </body>
+
+  {{{body}}}
+
+</body>
 </html>
-{{!--../vendor/php-email-form/validate.js--}}
-<script src="../../vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../../vendor/swiper/swiper-bundle.min.js"></script>
-  {{!-- <script src="../../vendor/php-email-form/validate.js"></script> --}}
 
-<script src="./js/getstarted.js"></script>
-<script src="./js/index.js"></script>
+<script src="../../vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../../vendor/swiper/swiper-bundle.min.js"></script>
+<!-- <script src="../../vendor/php-email-form/validate.js"></script> -->
+
+<script src="/js/getstarted.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/logout.js"></script>

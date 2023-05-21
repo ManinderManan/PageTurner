@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, BookGenre, Genre, Post, User } = require("../../models");
+const { Book, Post, User, Dashboard } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET all books for homepage and display them in the homepage.handlebars
@@ -8,11 +8,8 @@ router.get("/", async (req, res) => {
     const bookData = await Book.findAll({
       include: [
         {
-          model: User,
-          attributes: ["username"],
-        },
-        {
           model: Post,
+          attributes: ["id"],
         },
       ],
     });
@@ -21,7 +18,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       books,
-      loggedIn: req.session.loggedIn,
+     loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -31,6 +28,7 @@ router.get("/", async (req, res) => {
 // GET one post and display it in the single-post.handlebars
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
+    console.log("hit post route")
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
@@ -46,7 +44,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
     //   serialize data so the template can read it
     const post = postData.get({ plain: true });
 
-    res.render("post", {
+    res.render("postReview", {
       post,
       loggedIn: req.session.loggedIn,
     });
@@ -72,6 +70,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     // serialize data so the template can read it
     const user = userData.get({ plain: true });
+    console.log(user)
 
     res.render("dashboard", {
       ...user,
@@ -99,6 +98,18 @@ router.get("/signup", (req, res) => {
     return;
   }
   res.render("signup");
+});
+
+// render the add-book.handlebars page if the user is logged in and redirect to the homepage if they are not logged in already
+router.get("/addbook", withAuth, (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("addbook")
+  // {
+  //   loggedIn: req.session.loggedIn,
+  // });
 });
 
 module.exports = router;

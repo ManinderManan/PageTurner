@@ -1,17 +1,42 @@
+<form action="" class="box is-shadowless">
+  <h1 class="title">Please sign in</h1>
+  <div class="card">
+    <div class="card-content">
+      <div class="field">
+        <label for="" class="label">Username</label>
+        <div class="control has-icons-left">
+          <input id="username-login" type="username" class="input" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="" class="label">Password</label>
+        <div class="control has-icons-left">
+          <input id="password-login" type="password" placeholder="*******" class="input" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-lock"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="" class="checkbox">
+          <input type="checkbox">
+          Remember me
+        </label>
+      </div>
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
+      <div class="field buttons">
+        <button id="loginBtn" class="button is-fullwidth is-success">
+          <span class="icon">
+            <i class="log-in"></i>
+          </span>
+          <span>Login</span>
+        </button>
+      </div>
+    </div>
   </div>
 </form>
-<a href="/signup">Sign up</a>
 
-<script src="/public/js/login.js"></script>
+<script src="/js/login.js"></script>
