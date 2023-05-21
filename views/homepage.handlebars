@@ -5,7 +5,7 @@
         {{#each books as |books|}}
         <div class="bookLinks">
             <!-- Book image redirect to view original user's review -->
-            <a href="{{books.post_id}}">
+            <a href="post/{{books.post_id}}">
                 <img src="{{books.book_image}}" alt="{{books.book_title}}"/>
             </a>
             <br>
@@ -32,4 +32,3 @@
 {{/each}}
     </ul>
 </div> --}}
-
