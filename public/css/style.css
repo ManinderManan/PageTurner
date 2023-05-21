@@ -145,15 +145,15 @@ h6 {
 .navbar {
   padding: 0;
   justify-content: flex-start;
-  /* margin-left: 600px; */
+  margin-bottom: 40px;
 }
 
 .navbar ul {
   padding: 0;
   display: flex;
   list-style: none;
-  align-items: center;
-  margin-left: 73.5rem;
+  align-items: right;
+  /* margin-left: 70.5rem; */
 }
 
 .navbar li {
@@ -414,7 +414,7 @@ h6 {
   height: 90vh;
   background: url("../images/FFFFFF.png") top center;
   background-size: cover;
-  margin-bottom: 200px;
+  margin-bottom: -400px;
 }
 
 #hero .container {
