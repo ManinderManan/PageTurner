@@ -3,7 +3,7 @@ const bookTitle = document.getElementById('book_title');
 
 bookSubmit.addEventListener('submit', async (event)=>{
     event.preventDefault();
-    var title = book_title.value.trim();
+    var title = bookTitle.value.trim();
     const response = await fetch ('/api/post', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
