@@ -2,21 +2,27 @@
     <div class="textContainer">
         <!-- This will be for the logged in user's personal dashboard -->
         <p>Welcome,</p>
-        <h1> {{book.user.username}} </h1>
+        <h1> {{user.username}} </h1>
     </div>
+    {{#if user.items.length}}
     <div class="bookContainer">
-        {{#each book as |book|}}
+        {{#each user as |user|}}
         <div class="bookLinks">
             <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
-            <a href="{{book.post_id}}">
-                <img src="{{book.book_image}}" alt="{{book.book_title}}"/>
+            <a href="{{user.post_id}}">
+                <img src="{{user.book_image}}" alt="{{user.book_title}}"/>
             </a>
             <br>
-            <!-- Button will go in front of text - lets users add this book to their queue -->
-            <a href="book/{{book.id}}">
-            {{book.book_title}}
+            <!-- Button will go in front of text - lets users add a review -->
+            <a href="books/{{user.book_id}}">
+            {{books.book_title}}
             </a>
+            <a href="addbook.handlebars">Add new book.</a>
         </div>    
         {{/each}}
+        {{else}}
+        <p>No items found.</p>
+        <a href="addbook.handlebars">Add new book.</a>
+    {{/if}}
     </div>
 </div>

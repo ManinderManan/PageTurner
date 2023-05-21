@@ -33,31 +33,28 @@ router.get('/:id', async (req, res) => {
     }
     });
 
-// create a new book
+// Create a new book
 router.post('/', async (req, res) => {
     try {
+        console.log("req.body", req.body)
+        // Uses google API to find missing info
+        const bookInfo = await getBookInfo(req.body.book_title);
+        console.log("book info", bookInfo)
+        // Makes new book with retrieved info
         const bookData = await Book.create({
-            ...req.body,
-            // associate new book with logged in user
-            user_id: req.session.user_id,
+            book_title: req.body.book_title,
+            book_author: bookInfo.author,
+            book_image: bookInfo.image_url,
+            user_id: req.body.user_id, // Associate new book with the logged-in user
         });
-        // if there's user data, we need to create pairings to bulk create in the BookGenre model
-        if (req.body.user_id.length) {
-        const bookUserIdArray = req.body.user_id.map((user_id) => {
-            return {
-            book_id: bookData.id,
-            user_id,
-            };
-        });
-        await Dashboard.bulkCreate(bookUserIdArray);
-        }
-        // if no book genre data, just respond
+  
         res.status(200).json(bookData);
     } catch (error) {
-        res.status(500).json(error);
+      res.status(500).json(error);
     }
-    }
-);
+  });
+  
+  
 
 // // update a book by id
 // router.put('/:id', async (req, res) => {

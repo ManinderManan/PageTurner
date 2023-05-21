@@ -1,7 +1,6 @@
 // this takes in a title from user input, makes an api call to google
 // then returns an object with author and imag_Url
 async function getBookInfo(title){
-    console.log(title)
     const apiKey = process.env.API_KEY
     const googleUrl = `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${apiKey}`
     try {
@@ -9,9 +8,8 @@ async function getBookInfo(title){
         // For example:
         const response = await fetch(googleUrl)
         const data = await response.json()
-        console.log(data)
         const bookInfo = data?.items?.[0]
-        console.log("info here", bookInfo)
+      
         const author = bookInfo.volumeInfo.authors[0]
         const image_url = bookInfo.volumeInfo.imageLinks.thumbnail
         // "categories" can be extracted from the API call as well
