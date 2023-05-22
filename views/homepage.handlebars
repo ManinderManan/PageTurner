@@ -1,34 +1,31 @@
 <h2>Check out recent books:</h2>
 
-<div class ="homeContainer">
-    <div class="bookContainer">
-        {{#each books as |books|}}
-        <div class="bookLinks">
-            <!-- Book image redirect to view original user's review -->
-            <a href="post/{{books.post_id}}">
-                <img src="{{books.book_image}}" alt="{{books.book_title}}"/>
-            </a>
-            <br>
-            <!-- Button will go in front of text - lets users add this book to their queue -->
-            <a href="post/{{books.post_id}}">
-            {{books.book_title}}
-            </a>
-        </div>    
-        {{/each}}
+<div class="homeContainer">
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Page Turner</h1>
+      <h2>A social network for bibliophiles</h2>
+      <a href="/signup" class="btn-get-started">Get Started</a>
     </div>
+    <div id="landingContainer">
+      <div class="pictureContainer" width="280px">
+        <img src="./images/ptLogo.png" />
+      </div>
+    </div>
+  </section>
+  <div class="bookContainer">
+    {{#each books as |books|}}
+      <div class="bookLinks">
+        <!-- Book image redirect to view original user's review -->
+        <a href="{{books.post_id}}">
+          <img src="{{books.book_image}}" alt="{{books.book_title}}" />
+        </a>
+        <br />
+        <!-- Button will go in front of text - lets users add this book to their queue -->
+        <a href="post/{{books.post_id}}">
+          {{books.book_title}}
+        </a>
+      </div>
+    {{/each}}
+  </div>
 </div>
-
-{{!-- <div>
-
-    <p>some text</p>
-
-    <ul>
-        {{#each user.post as |post|}}
-        <li>
-            <h4> {{post.book_title}}</h4>
-            <p> {{post.book_author}}</p>
-            <p> {{post.rating}}</p>
-        </li>
-{{/each}}
-    </ul>
-</div> --}}
