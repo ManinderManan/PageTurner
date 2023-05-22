@@ -136,6 +136,26 @@ h6 {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+#image{
+  background-image: url("../img/review.png");
+  margin-top: 90px;
+  margin-right: 200px;
+
+}
+
+#image2{
+  background-image: url("../img/queue.png");
+  margin-top: 0px;
+  margin-right: 400px;
+}
+
+#image3{
+  background-image: url("../img/queue.png");
+  margin-top: 0px;
+  margin-right: 400px;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
