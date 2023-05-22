@@ -127,8 +127,17 @@ router.get('/postview/:id', async (req, res) => {
   }
 })
 
-router.get('/post', withAuth, async (req, res) => {
-  res.render('post');
+router.get('/edit/:id',withAuth, async(req,res) => {
+    await Book.findByPk(req.params.id,{raw:true})
+    .then(postData => {
+        if(req.session.user_id === postData.user_id){
+        //console.log(postData)
+        res.render('edit',{ loggedIn : true, post:postData });
+        } else {
+            res.redirect('/')
+        }
+    })
+   
 })
 
 router.get('/post', async (req, res) => {
