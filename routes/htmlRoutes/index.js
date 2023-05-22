@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, User, } = require("../../models");
+const { Book, User, Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET all books for homepage and display them in the homepage.handlebars
@@ -102,11 +102,18 @@ router.get("/signup", (req, res) => {
 router.get('/postview/:id', async (req, res) => {
   try {
     const bookData = await Book.findByPk(req.params.id, {
+      include: [ 
+        { 
+          model: Post,
+          attributes: [
+            'id', 'body_review', 'book_id', 'user_id', 'created_at'
+          ],
       include: [
         {
           model: User,
         },
       ],
+        }],
     });
 
     const book = bookData.get({ plain: true });
@@ -118,6 +125,24 @@ router.get('/postview/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+})
+
+router.get('/edit/:id',withAuth, async(req,res) => {
+    await Book.findByPk(req.params.id,{raw:true})
+    .then(postData => {
+        if(req.session.user_id === postData.user_id){
+        //console.log(postData)
+        res.render('edit',{ loggedIn : true, post:postData });
+        } else {
+            res.redirect('/')
+        }
+    })
+   
+})
+
+router.get('/post', async (req, res) => {
+
+  res.render('post');
 })
 
 // // render the add-book.handlebars page if the user is logged in and redirect to the homepage if they are not logged in already

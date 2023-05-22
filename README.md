@@ -5,13 +5,11 @@ Full stack CMS-style book review application. Users can create an account, login
 
 ## Installation
 N/A
-(![Screenshot](./public/images/pageturnerpic1.png))
-(![Screenshot](./public/images/pageturnerpic2.png))
-(![Screenshot](./public/images/pageturnerpic3.png))
-(![Screenshot](./public/images/pageturnerpic4.png))
-(![Screenshot](./public/images/pageturnerpic5.png))
-
-
+![image](https://github.com/ManinderManan/PageTurner/assets/123151991/6a0b2fd9-f4fc-49a3-9d54-7fe67f26bdc1)
+![image](https://github.com/ManinderManan/PageTurner/assets/123151991/8105995e-1c12-4077-8c12-5f65ea644678)
+![image](https://github.com/ManinderManan/PageTurner/assets/123151991/c16b0744-0163-4575-9145-3960da8aa579)
+![image](https://github.com/ManinderManan/PageTurner/assets/123151991/e3026605-90df-4ffb-9ddf-e16896794c27)
+![image](https://github.com/ManinderManan/PageTurner/assets/123151991/751bf7b6-54ef-427c-9ea2-02f2245a63fc)
 
 ## Usage
 by adding books and reviews to the website for other users to view and review

@@ -1,11 +1,12 @@
-<form id="blogEditForm">
-    <label for="blogTitle">Title</label>
-    <input id="blogTitle" value="{{post.title}}" type="text">
-    <div>
-    <label for="blogBody">Body</label>
-<textarea id="blogBody"  cols="30" rows="10">{{post.text}}</textarea>    
+<div class="postInfo">
+  <label for="postTitle">Title</label>
+  <input type="text" name="postTitle" id="postTitle">
 </div>
-<input  type="submit" value="Submit">
+<div class="postBody">
+  <label for="postBody">body</label>
+  <input type="text" name="postBody" id="postBody" >
+
+{{!-- <input  type="submit" value="Submit">
 
         <div class="section-title">
           <h2>Posts</h2>
@@ -89,4 +90,4 @@
   <div class="imgContainer">
     <img src="{{post.book.book_image}}" alt="{{post.book.book_title}}"/>
   </div>
-</div>  
+</div>   --}}
