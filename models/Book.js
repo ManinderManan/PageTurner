@@ -22,10 +22,6 @@ Book.init(
             type: DataTypes.STRING, // must store url as string
             allowNull: true
           },
-        post_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false, 

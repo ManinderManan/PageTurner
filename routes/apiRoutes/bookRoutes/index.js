@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, User, Dashboard, Post } = require('../../../models');
+const { Book, User, } = require('../../../models');
 const {getBookInfo} = require("../../../utils/googleApi")
 
 // get all books
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const bookData = await Book.findAll({
         // include associated genre and post data
-        include: [{ User , Post }],
+        include: [{ User}],
         });
         res.status(200).json(bookData);
     } catch (error) {
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     try {
         const bookData = await Book.findByPk(req.params.id, {
         // include associated genre and post data
-        include: [{ User , Post }],
+        include: [{ User }],
         });
         if (!bookData) {
         res.status(400).json({ message: 'No book found with that id!' });
