@@ -8,14 +8,15 @@ router.post("/signup", async (req, res) => {
         username: req.body.username,
         password: req.body.password,
     });
+    console.log("sign up 1st hit", userData)
+    req.session.loggedIn = true;
+    req.session.user = userData;
+    req.session.id = userData.id;
 
     // save the session so that the user is logged in
     req.session.save(() => {
-        req.session.loggedIn = true;
-        req.session.user = userData;
-        req.session.id = userData.id;
-        
-        res.status(200).json(userData);
+        res.status(200)
+        res.redirect("/dashboard")
       });
 
   } catch (error) {

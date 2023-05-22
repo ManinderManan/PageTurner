@@ -55,6 +55,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
 
 // GET all books and display them in the dashboard.handlebars
 router.get("/dashboard", withAuth, async (req, res) => {
+  console.log("redirected to dash", req.session)
   try {
     const userData = await User.findByPk(req.session.user.id, {
       include: [
