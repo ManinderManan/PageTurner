@@ -145,15 +145,14 @@ h6 {
 .navbar {
   padding: 0;
   justify-content: flex-start;
-  margin-bottom: 40px;
 }
 
 .navbar ul {
   padding: 0;
   display: flex;
   list-style: none;
-  align-items: right;
-  /* margin-left: 70.5rem; */
+  align-items: center;
+  margin-bottom: 60px;
 }
 
 .navbar li {
@@ -197,7 +196,6 @@ h6 {
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
-  border-bottom: 2px solid #fff;
   padding: 5px 2px;
 }
 
