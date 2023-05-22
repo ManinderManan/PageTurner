@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
   <link href="../../vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../../vendor/swiper/swiper-bundle.min.js" rel="stylesheet">
 
-  <link href="/css/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,6 +60,33 @@
   </header>
 
   {{#unless loggedIn}}
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Page Turner</h1>
+      <h2>A social network for bibliophiles</h2>
+      <a href="/signup" class="btn-get-started">Get Started</a>
+    </div>
+    <div id="landingContainer">
+      <div class="pictureContainer" width="200px">
+        <img src="./images/ptLogo.png"style="width: 200px; height: auto;">
+      </div>
+          </div>
+
+  </section>
+  <div id="landingContainer2">
+  <div class="pictureContainer1" width="200px">
+            <img src="./images/queue.png" style="width: 200px; height: auto;">
+            <h3>Add books to your queue</h3>
+          </div>
+          <div class="pictureContainer2" width="200px">
+         <img src="./images/review.png" style="width: 200px; height: auto;">
+          <h3>Review books you've read</h3>
+    </div>
+    <div class="pictureContainer3" width="200px">
+          <img src="./images/rec.png" style="width: 200px; height: auto;">
+          <h3>Find recommendations</h3>
+          </div>
+          </div>
   {{/unless}}
   
 
