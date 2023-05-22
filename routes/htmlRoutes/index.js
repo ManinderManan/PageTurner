@@ -91,6 +91,10 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/addbook", (req, res) => {
+  res.render("addbook")
+});
+
 // render the signup.handlebars page if the user is not logged in and redirect to the homepage if they are logged in already
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {

@@ -35,18 +35,21 @@ router.get('/:id', async (req, res) => {
 
 // Create a new book
 router.post('/', async (req, res) => {
+    console.log("session info maybe?", req.session)
     try {
         console.log("req.body", req.body)
         // Uses google API to find missing info
         const bookInfo = await getBookInfo(req.body.book_title);
         console.log("book info", bookInfo)
         // Makes new book with retrieved info
-        const bookData = await Book.create({
-            book_title: req.body.book_title,
+        const newBoook = {
+            book_title: req.body.title,
             book_author: bookInfo.author,
             book_image: bookInfo.image_url,
-            user_id: req.body.user_id, // Associate new book with the logged-in user
-        });
+            user_id: req.session.user.id // Associate new book with the logged-in user
+        }
+        console.log("newbook", newBoook)
+        const bookData = await Book.create(newBoook);
   
         res.status(200).json(bookData);
     } catch (error) {

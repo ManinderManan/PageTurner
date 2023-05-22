@@ -78,11 +78,12 @@ router.post("/logout", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-        include: [{ Post, Book }],
+        include: [Post, Book],
     });
     res.status(200).json(userData);
   } catch (error) {
-    res.status(500).json(error);
+    console.error(error)
+    res.status(500).send(error.message);
   }
 });
 
@@ -90,7 +91,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-        include: [{ Post, Book }],
+        include: [Post, Book],
     });
     if (!userData) {
       res.status(404).json({ message: "No user found with that id!" });

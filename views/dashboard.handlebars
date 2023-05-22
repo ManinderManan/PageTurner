@@ -17,12 +17,12 @@
             <a href="books/{{user.book_id}}">
             {{books.book_title}}
             </a>
-            <a href="addbook.handlebars">Add new book.</a>
+            <a href="/addbook">Add new book.</a>
         </div>    
         {{/each}}
         {{else}}
         <p>No items found.</p>
-        <a href="addbook.handlebars">Add new book.</a>
+        <a href="/addbook">Add new book.</a>
     {{/if}}
     </div>
 </div>
