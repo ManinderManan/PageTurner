@@ -40,12 +40,6 @@
           <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
           {{#if loggedIn}}
           <button class="btn btn-danger" id="logoutBtn">Logout</button>
           {{else}}
@@ -62,16 +56,12 @@
   {{#unless loggedIn}}
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
+      <div id="getStarted">
       <h1>Page Turner</h1>
       <h2>A social network for bibliophiles</h2>
       <a href="/signup" class="btn-get-started">Get Started</a>
     </div>
-    <div id="landingContainer">
-      <div class="pictureContainer" width="200px">
-        <img src="./images/ptLogo.png"style="width: 200px; height: auto;">
-      </div>
-          </div>
-
+    </div>
   </section>
   <div id="landingContainer2">
   <div class="pictureContainer1" width="200px">
@@ -104,3 +94,4 @@
 <script src="/js/getstarted.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/logout.js"></script>
+

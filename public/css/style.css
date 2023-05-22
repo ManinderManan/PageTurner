@@ -399,7 +399,10 @@ h6 {
 /* --------------------------------------------------------------
 # Hero Section
 -------------------------------------------------------------- */
- #landingContainer {
+#getStarted{
+  align-items: center;
+}
+#landingContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -437,18 +440,19 @@ h6 {
 
 #hero h1 {
   margin: 0;
-  margin-left: 110px;
+  margin-left: 600px;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
   color: #3C5447;
+
 }
 
 #hero h2 {
   color: #000;
   margin: 10px 0 0 0;
-  margin-left: 100px;
+  margin-left: 585px;
   font-size: 24px;
 }
 
@@ -461,7 +465,7 @@ h6 {
   display: inline-block;
   padding: 12px 35px;
   margin-top: 15px;
-  margin-left: 175px;
+  margin-left: 675px;
   transition: 0.5s;
   color: #fff;
   background: #5F5749;
@@ -560,7 +564,29 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
-
+.title{
+  margin-top: -500px;
+  margin-left: 73rem;
+}
+.label{
+  margin-left: 73rem;
+}
+.input{
+  margin-left: 73rem;
+}
+.checkbox{
+  margin-left: 72.75rem;
+}
+#signUpBtn{
+  margin-left: 73rem;
+}
+#loginBtn{
+  margin-left: 73rem;
+}
+#bookForm{
+  margin-left: 73rem;
+  margin-top: -450px;
+}
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -784,3 +810,4 @@ section {
 .posts .icon-box:hover p {
   color: #fff;
 }
+
