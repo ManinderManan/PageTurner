@@ -10,5 +10,8 @@ bookSubmit.addEventListener('submit', async (event)=>{
     body: JSON.stringify({title}),
   });
   console.log(response);
+    if (response.ok) {
+        document.location.replace('/');
+    }
      
 });

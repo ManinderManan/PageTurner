@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, User, } = require('../../../models');
+const { Book, User, Post } = require('../../../models');
 const {getBookInfo} = require("../../../utils/googleApi")
 
 // get all books
