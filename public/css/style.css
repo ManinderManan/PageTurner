@@ -583,10 +583,17 @@ section {
 #loginBtn{
   margin-left: 73rem;
 }
-#bookForm{
-  margin-left: 73rem;
-  margin-top: -450px;
+#logoutBtn{
+  background-color: #3C5447;
+  color: #fff;
 }
+#bookForm{
+  margin-left: 3rem;
+  margin-top: -650px;
+}
+
+
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
