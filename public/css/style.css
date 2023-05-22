@@ -1,4 +1,5 @@
 
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -95,7 +96,15 @@ h6 {
 #header {
   background: rgb(60, 84, 71);
   transition: all 0.5s;
+  z-index: 997;
+  top: 40px;
+  position: relative;
+  margin-top: -50px;
   
+}
+
+#header.header-scrolled {
+  top: 0;
 }
 
 #header .logo {
@@ -144,6 +153,8 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+  margin-bottom: 60px;
+  margin-top: -40px;
 }
 
 .navbar li {
@@ -388,14 +399,31 @@ h6 {
 /* --------------------------------------------------------------
 # Hero Section
 -------------------------------------------------------------- */
- #landingContainer {
+#getStarted{
+  align-items: center;
+}
+#landingContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 480px;
+  margin-left: 420px;
   margin-top: -200px;
+}
+
+.pictureContainer{
+  margin-left: 400px;
+  margin-top: 40px;
+}
+
+#landingContainer2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: -40px;
 }
 
 #hero {
@@ -412,18 +440,19 @@ h6 {
 
 #hero h1 {
   margin: 0;
-  margin-left: 110px;
+  margin-left: 600px;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
   color: #3C5447;
+
 }
 
 #hero h2 {
   color: #000;
   margin: 10px 0 0 0;
-  margin-left: 100px;
+  margin-left: 585px;
   font-size: 24px;
 }
 
@@ -436,7 +465,7 @@ h6 {
   display: inline-block;
   padding: 12px 35px;
   margin-top: 15px;
-  margin-left: 175px;
+  margin-left: 675px;
   transition: 0.5s;
   color: #fff;
   background: #5F5749;
@@ -535,7 +564,41 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+.title{
+  margin-top: -500px;
+  margin-left: 73rem;
+}
+.label{
+  margin-left: 73rem;
+}
+.input{
+  margin-left: 73rem;
+}
+.checkbox{
+  margin-left: 72.75rem;
+}
+#signUpBtn{
+  margin-left: 73rem;
+}
+#loginBtn{
+  margin-left: 73rem;
+}
+#logoutBtn{
+  background-color: #3C5447;
+  color: #fff;
+}
+#bookForm{
+  margin-left: 3rem;
+  margin-top: -650px;
+}
 
+.bookContainer{
+  display: flex;
+  justify-content: space-around;
+}
+#userDash{
+  margin-left:35rem;
+}
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -759,3 +822,4 @@ section {
 .posts .icon-box:hover p {
   color: #fff;
 }
+
