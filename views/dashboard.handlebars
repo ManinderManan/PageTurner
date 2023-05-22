@@ -4,8 +4,10 @@
         <p>Welcome,</p>
         <h1> {{username}} </h1>
     </div>
+    <p>{{books.book_title}}</p>
     <div class="bookContainer">
-        {{#each books as |book|}}
+        {{#each user.books as |book|}}
+        <p>{{book.book_title}}</p>
         <div class="bookLinks">
             <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
             {{!-- <a href="{{book.post_id}}"> --}}
@@ -13,7 +15,7 @@
             </a>
             <br>
             <!-- Button will go in front of text - lets books add a review -->
-            <a href="books/{{book.book_id}}">
+            <a href="books/{{book.user_id}}">
             {{book.book_title}}
             </a>
             <a href="/addbook">Add new book.</a>

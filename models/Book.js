@@ -25,6 +25,10 @@ Book.init(
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false, 
+            references: {
+                model: 'user',
+                key: 'id'
+            }
             // add required and validate
         }
     },

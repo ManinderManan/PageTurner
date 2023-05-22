@@ -1,5 +1,5 @@
 <h2>Check out recent books:</h2>
-
+{{#unless loggedIn}}
 <div class="homeContainer">
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
@@ -13,7 +13,9 @@
       </div>
     </div>
   </section>
+{{/unless}}
   <div class="bookContainer">
+    {{#if loggedIn}}
     {{#each books as |books|}}
       <div class="bookLinks">
         <!-- Book image redirect to view original user's review -->
@@ -27,5 +29,6 @@
         </a>
       </div>
     {{/each}}
+    {{/if}}
   </div>
 </div>

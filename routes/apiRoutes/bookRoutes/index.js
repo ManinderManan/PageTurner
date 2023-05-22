@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 
 // Create a new book
 router.post('/', async (req, res) => {
-    console.log("session info maybe?", req.session)
+    //console.log("session info maybe?", req.session)
     try {
         console.log("req.body", req.body)
         // Uses google API to find missing info
