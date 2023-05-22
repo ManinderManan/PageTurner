@@ -1,19 +1,4 @@
 <h2>Check out recent books:</h2>
-{{#unless loggedIn}}
-<div class="homeContainer">
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container">
-      <h1>Page Turner</h1>
-      <h2>A social network for bibliophiles</h2>
-      <a href="/signup" class="btn-get-started">Get Started</a>
-    </div>
-    <div id="landingContainer">
-      <div class="pictureContainer" width="280px">
-        <img src="./images/ptLogo.png" />
-      </div>
-    </div>
-  </section>
-{{/unless}}
   <div class="bookContainer">
     {{#if loggedIn}}
     {{#each books as |books|}}
