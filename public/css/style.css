@@ -592,8 +592,13 @@ section {
   margin-top: -650px;
 }
 
-
-
+.bookContainer{
+  display: flex;
+  justify-content: space-around;
+}
+#userDash{
+  margin-left:35rem;
+}
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
