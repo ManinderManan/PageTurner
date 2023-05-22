@@ -2,20 +2,20 @@
     <div class="textContainer">
         <!-- This will be for the logged in user's personal dashboard -->
         <p>Welcome,</p>
-        <h1> {{user.username}} </h1>
+        <h1> {{username}} </h1>
     </div>
-    {{#if user.items.length}}
+    {{#if books.length}}
     <div class="bookContainer">
-        {{#each user as |user|}}
+        {{#each books as |book|}}
         <div class="bookLinks">
             <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
-            <a href="{{user.post_id}}">
-                <img src="{{user.book_image}}" alt="{{user.book_title}}"/>
+            <a href="{{book.post_id}}">
+                <img src="{{book.book_image}}" alt="{{book.book_title}}"/>
             </a>
             <br>
-            <!-- Button will go in front of text - lets users add a review -->
-            <a href="books/{{user.book_id}}">
-            {{books.book_title}}
+            <!-- Button will go in front of text - lets books add a review -->
+            <a href="books/{{book.book_id}}">
+            {{book.book_title}}
             </a>
             <a href="/addbook">Add new book.</a>
         </div>    
@@ -26,5 +26,3 @@
     {{/if}}
     </div>
 </div>
-
-<script src="/js/logout.js"></script>

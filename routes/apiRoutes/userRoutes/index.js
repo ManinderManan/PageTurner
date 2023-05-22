@@ -3,7 +3,6 @@ const { User, Post, Book } = require("../../../models");
 
 // create a new user
 router.post("/signup", async (req, res) => {
-  console.log(req.body)
   try {
     const userData = await User.create({
         username: req.body.username,
@@ -15,9 +14,9 @@ router.post("/signup", async (req, res) => {
         req.session.loggedIn = true;
         req.session.user = userData;
         req.session.id = userData.id;
+        
+        res.status(200).json(userData);
       });
-
-    res.status(200).json(userData);
 
   } catch (error) {
     res.status(500).json(error);

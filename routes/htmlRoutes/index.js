@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       books,
-     // loggedIn: req.session.loggedIn,
+     loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -44,7 +44,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
     //   serialize data so the template can read it
     const post = postData.get({ plain: true });
 
-    res.render("post", {
+    res.render("postReview", {
       post,
       loggedIn: req.session.loggedIn,
     });
@@ -102,6 +102,18 @@ router.get("/signup", (req, res) => {
     return;
   }
   res.render("signup");
+});
+
+// render the add-book.handlebars page if the user is logged in and redirect to the homepage if they are not logged in already
+router.get("/addbook", withAuth, (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("addbook")
+  // {
+  //   loggedIn: req.session.loggedIn,
+  // });
 });
 
 module.exports = router;
