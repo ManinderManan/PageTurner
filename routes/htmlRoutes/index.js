@@ -105,6 +105,9 @@ router.get('/postview/:id', async (req, res) => {
       include: [ 
         { 
           model: Post,
+          attributes: [
+            'id', 'body_review', 'book_id', 'user_id', 'created_at'
+          ],
       include: [
         {
           model: User,
@@ -122,6 +125,10 @@ router.get('/postview/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+})
+
+router.get('/post', withAuth, async (req, res) => {
+  res.render('post');
 })
 
 router.get('/post', async (req, res) => {
