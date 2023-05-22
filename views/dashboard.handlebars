@@ -4,12 +4,11 @@
         <p>Welcome,</p>
         <h1> {{username}} </h1>
     </div>
-    {{#if books.length}}
     <div class="bookContainer">
         {{#each books as |book|}}
         <div class="bookLinks">
             <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
-            <a href="{{book.post_id}}">
+            {{!-- <a href="{{book.post_id}}"> --}}
                 <img src="{{book.book_image}}" alt="{{book.book_title}}"/>
             </a>
             <br>
@@ -20,9 +19,7 @@
             <a href="/addbook">Add new book.</a>
         </div>    
         {{/each}}
-        {{else}}
         <p>No items found.</p>
         <a href="/addbook">Add new book.</a>
-    {{/if}}
     </div>
 </div>

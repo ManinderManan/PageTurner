@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, Post, User, Dashboard } = require("../../models");
+const { Book, User, } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET all books for homepage and display them in the homepage.handlebars
@@ -8,8 +8,7 @@ router.get("/", async (req, res) => {
     const bookData = await Book.findAll({
       include: [
         {
-          model: Post,
-          attributes: ["id"],
+          model: User,
         },
       ],
     });
@@ -25,33 +24,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET one post and display it in the single-post.handlebars
-router.get("/post/:id", withAuth, async (req, res) => {
-  try {
-    console.log("hit post route")
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-        {
-          model: Book,
-        },
-      ],
-    });
-
-    //   serialize data so the template can read it
-    const post = postData.get({ plain: true });
-
-    res.render("postReview", {
-      post,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // GET all books and display them in the dashboard.handlebars
 router.get("/dashboard", withAuth, async (req, res) => {
@@ -61,9 +33,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
       include: [
         {
           model: Book,
-        },
-        {
-          model: Post,
         },
       ],
     });
@@ -105,16 +74,16 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// render the add-book.handlebars page if the user is logged in and redirect to the homepage if they are not logged in already
-router.get("/addbook", withAuth, (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-  res.render("addbook")
-  // {
-  //   loggedIn: req.session.loggedIn,
-  // });
-});
+// // render the add-book.handlebars page if the user is logged in and redirect to the homepage if they are not logged in already
+// router.get("/addbook", withAuth, (req, res) => {
+//   if (!req.session.loggedIn) {
+//     res.redirect("/");
+//     return;
+//   }
+//   res.render("addbook")
+//   // {
+//   //   loggedIn: req.session.loggedIn,
+//   // });
+// });
 
 module.exports = router;

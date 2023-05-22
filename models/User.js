@@ -24,7 +24,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        dashboard_id: {
+        book_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
         }
