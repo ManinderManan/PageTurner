@@ -1,6 +1,6 @@
 const User = require("./User");
 const Book = require("./Book");
-
+const Post = require("./Post");
 
 // Users can have multiple books
 User.hasMany(Book, {
@@ -35,4 +35,4 @@ Book.belongsTo(User, {
 //     foreignKey: "user_id",
 // });
     
-module.exports = { Book, User, };
+module.exports = { Book, User, Post };
