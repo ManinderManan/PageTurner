@@ -21,4 +21,9 @@ by adding books and reviews to the website for other users to view and review
 This project uses MIT
 
 ## Contributions
-Justin
+Justin Rossi
+Paul Mendoza
+Kate Rogers
+John Elmore
+Maninder Manan
+
