@@ -1,13 +1,13 @@
 <div id = "userDash" class="dashContainer">
     <div class="textContainer">
         <!-- This will be for the logged in user's personal dashboard -->
-        <p>Welcome,</p>
+        <p>Welcome!</p>
         <h1> {{username}} </h1>
+        <a href="/addbook"><h1>Add new book.</h1></a>
     </div>
-    <p>{{books.book_title}}</p>
     <div class="bookContainer">
         {{#each user.books as |book|}}
-        <p>{{book.book_title}}</p>
+       
         <div class="bookLinks">
             <!-- Book image redirect to add post if none exists, or view post if there is one for this book -->
             {{!-- <a href="{{book.post_id}}"> --}}
@@ -18,10 +18,8 @@
             <a href="books/{{book.user_id}}">
             {{book.book_title}}
             </a>
-            <a href="/addbook">Add new book.</a>
+            {{!-- <a href="/addbook">Add new book.</a> --}}
         </div>    
         {{/each}}
-        <p>No items found.</p>
-        <a href="/addbook"><h1>Add new book.</h1></a>
     </div>
 </div>
