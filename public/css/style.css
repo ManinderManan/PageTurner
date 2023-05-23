@@ -594,7 +594,11 @@ section {
 
 .bookContainer{
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.bookLinks{
+  box-sizing: border-box;
+  padding: 16px;
 }
 
 /*--------------------------------------------------------------
