@@ -2,9 +2,9 @@
     <div class="textContainer">
         <!-- This will be for the logged in user's personal dashboard -->
         <p>Welcome,</p>
-        <h1> {{user.username}} </h1>
+        <h1> {{username}} </h1>
     </div>
-    {{!-- <p>{{books.book_title}}</p> --}}
+    <p>{{books.book_title}}</p>
     <div class="bookContainer">
         {{#each user.books as |book|}}
         <p>{{book.book_title}}</p>
@@ -18,12 +18,10 @@
             <a href="books/{{book.user_id}}">
             {{book.book_title}}
             </a>
-           
+            <a href="/addbook">Add new book.</a>
         </div>    
         {{/each}}
-        {{#if users.books.length}}
         <p>No items found.</p>
-
-
+        <a href="/addbook"><h1>Add new book.</h1></a>
     </div>
 </div>
